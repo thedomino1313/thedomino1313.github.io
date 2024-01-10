@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alias Instructions</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="how-to-make-a-shortcut-to-your-ds-folder-in-wsl">How to make a shortcut to your DS folder in WSL</h1>
+<ul>
+<li>Open WSL</li>
+<li>Type <code>vim ~/.bashrc</code></li>
+<li>Welcome to vim</li>
+<li>Use the arrow keys to navigate to the bottom of the file</li>
+<li>Hit <code>i</code> to enter edit mode</li>
+<li>Hit enter a couple of times to give yourself some room</li>
+<li>Copy the following lines and use <code>ctrl v</code> or <code>ctrl shift v</code> to paste them into the file</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> -f ~/.bash_aliases <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">.</span> ~/.bash_aliases
+<span class="token keyword">fi</span>
+</code></pre>
+<ul>
+<li>Hit <code>esc</code></li>
+<li>Type <code>:wq</code> to save the file
+<ul>
+<li>This will take you back to the terminal</li>
+</ul>
+</li>
+<li>Type <code>~/.bash_aliases</code>
+<ul>
+<li>This opens the file where you will put your aliases</li>
+</ul>
+</li>
+<li>Hit <code>i</code> to enter insert mode again</li>
+<li>Optional: Add the following lines. The first allows you to easily get back to this file, and the second allows you to force update your changes to it.</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">alias</span> val<span class="token operator">=</span><span class="token string">"v ~/.bash_aliases"</span>
+<span class="token function">alias</span> sal<span class="token operator">=</span><span class="token string">"source ~/.bash_aliases"</span>
+</code></pre>
+<ul>
+<li>Add a shortcut to your Data Structures folder</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">alias</span> ds<span class="token operator">=</span><span class="token string">"cd ~/../../mnt/C/Users/&lt;the rest of the path&gt;"</span>
+</code></pre>
+<ul>
+<li>Where <code>&lt;rest of the path&gt;</code> is however you get to your Data Structures folder from the Users directory</li>
+<li>Hit <code>esc</code></li>
+<li>Type <code>:wq</code> to save the file</li>
+<li>Back in the terminal, type <code>sal</code> and hit enter.
+<ul>
+<li>If you didn’t add the <code>sal</code> alias from above, this will not work, and please type <code>source ~/.bash_aliases</code> instead.</li>
+</ul>
+</li>
+</ul>
+</div>
+</body>
+
+</html>
